@@ -1,0 +1,5 @@
+
+Common targets are:
+    core-image-minimal
+
+You can also run generated qemu images with a command like 'runqemu qemuarm'
