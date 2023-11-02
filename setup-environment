@@ -171,7 +171,7 @@ fi
 
 # Append BSP layer to BBLAYERS, if the machine is not from meta-linaro or OE (which are included in BBLAYERS by default)
 if [ "$_VALID_MACHINES" -eq 1 ]; then
-    _MACH_CONF=`find ${_PWD_PREV}/meta-* -name ${MACHINE}.conf`
+    _MACH_CONF=`find ${_PWD_PREV}/meta-* ${_PWD_PREV}/openembedded/meta/   -name ${MACHINE}.conf`
     _BSP_LAYER_REQUIRED=`echo ${_MACH_CONF} | sed -n 's/.*\(meta-.*\)\(\/conf\/machine\/\).*/\1/p'`
     _LAYERS=`\grep '^#@NEEDED_BSPLAYERS:' ${_MACH_CONF}`
     _BSP=`echo ${_LAYERS} |cut -f 2 -d ':'`
